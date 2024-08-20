@@ -1,38 +1,18 @@
-package day12.상속_inheritance.실습;
+package 다형성실습;
 
 public class Main {
+    public static void main(String[] args) {
+        // 다양한 교통수단 객체 생성
+        Transportation car = new Car("자동차");
+        Transportation bus = new Bus("버스");
+        Transportation subway = new Subway("지하철");
 
-	public static void main(String[] args) {
+        // 교통수단 배열에 저장
+        Transportation[] transportations = {car, bus, subway};
 
-		Cat cat = new Cat();
-	
-		Dog dog = new Dog();
-
-		
-		Animal animal1 = null;
-		animal1 = cat;
-		
-		Animal animal2 = null;
-		animal2 = dog;
-		
-		Animal[] animals = new Animal[2];
-		animals[0] = cat;
-		animals[1] = dog;
-		
-		
-		( ( Cat )animal1 ).기지개를켠다();
-		// 다운캐스팅
-		
-		for( int i=0; i<animals.length; i++) {
-			animals[i].걷는다();
-			animals[i].먹는다();
-		
-		
-		
-		if(animals[i] instanceof Cat) {
-			Cat tmp = (Cat) animals[i];
-			tmp.기지개를켠다();
-		}
-	}
-	}
+        // 다형성을 이용하여 각 교통수단의 이동 방식 호출
+        for (Transportation t : transportations) {
+            t.move();
+        }
+    }
 }
