@@ -1,0 +1,100 @@
+답
+
+
+1.  객체배열그림 제공 (배열과 객체는     heap 메모리에 생성되게 되어있다.new  연사자의 역할이 힙메모리에 메모리를 요청하는 것이다)
+2.  Object   (모든 클래스는    Object를 상속받는다 . 즉  자바의 모든 객체는  Object 로 참조가 가능하다  !!!!)
+
+
+3.  2  =>     객체를 출력하게되는 경우  artist.toString() 매서드가 호출된다. 그러나 부모의 매서드를 오버라이드 하지 않았기 때문에 
+                   Object가 가지 있는 toString() 매서드가 호출되어 클래스정보@해시코드 를 출력하게 된다
+
+
+4.   class A implements 한식요리가능한{
+
+                 void 된장찌개() {    System.out.println( "보글보글 된장찌게 만들기") ;}
+                 void 김치찌개() {    System.out.println("고기가득 김치찌게  만들기 "); }
+
+    }
+
+
+
+
+
+5.  4번 ( class 상속은  extends  ,  인터페이스 상속은   implements  이다)
+    인터페이스를 상속하면 인터페이스에 있는 매서드를 반드시 구현하도록 강제한다.
+
+
+
+6.  2번   (필수예외란: 반드시 예외처리를 해야하는 예외이다.   try~ catch 블럭 )
+
+
+7. 
+
+class Util{
+
+   int getTenTotal(){
+        int sum=0;   
+        for( int i=1; i<=10 ; i++) {
+             sum+= i;
+       }
+    return sum;
+  }
+}
+
+
+ Util u = new Util() ; 
+ int result  = u.getTenTotal(); 
+ System.out.println( result );
+
+
+
+8. 
+
+class C{
+String[]  getLikesMovies() {
+     String[]  likes= { "살인의추억" ,  "킹스맨2" ,  "스피드" };
+    return  likes;
+}
+}
+
+
+C c = new C() ;   
+String[] resultMovies= c.getLikesMovies();
+
+// 결과 출력하기  
+ ( Arrays라이브러리 사용하기 : 배열의 내용을 하나의 문자열로 받아오기  )
+ System.out.println(   Arrays.toString(   resultMovies ) ;
+
+
+// 결과출력하기 (직접)
+for(  int  i=0 ; i<  resultMovies.length; i++ ){
+          System.out.println(  resultMovies[i]);
+}
+
+
+
+9.    class Artist  implemsnts MyComarable{
+     
+         //추가됨
+         int  compareTo (  Obejct  o) {
+                 Artist a  =(Artist) o;                                
+                 return this.artistCode  - a.artistCode;       //기준의 객체의 아티스트코드에서 비교하는 객체으 아티스트코드를  빼게 되면
+                                                                             // 기준이 컸을 때 양수가 전달됨, 
+                                                                             //  양수가 전달되면 라이브러리에서 두 객체의 위치를 바꾸게 되어 있음
+         }
+
+     }
+
+
+
+
+10.  static 매서드에는  this 전달되지 않음  . 객체변수( 인스턴스 변수를 사용하지 못함)      
+     -static 매서드는  : 객체생성과 무관하게 사용할 수 있는 매서드 이다. 그러므로 객체정보가 전달 되지 않음
+
+     -인스턴수변수는 new 과정을 통해서 변수가 만들어지게 된다(객체생성을 해야 변수가 만들어진다)
+    
+
+
+
+
+
